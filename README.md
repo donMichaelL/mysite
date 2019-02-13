@@ -1,6 +1,8 @@
 1. Create a Procfile
 This file is used to explicitly declare your application’s process types and entry points. It is located in the root of your repository.
 (requires gunicorn)
+You can also specify the tasks to run during release phase p.x.
+python manage.py migrate
 
 2. Create a runtime.txt
 This will inform heroku for python version
