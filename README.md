@@ -18,3 +18,12 @@ You do it only once.
 pip install -r requirements.txt
 python manage.py collectstatic --noinput
 launching
+
+
+5.  heroku run python manage.py migrate
+Migrations are not applied by default
+
+
+
+# Tips
+heroku run python manage.py shell
