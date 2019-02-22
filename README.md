@@ -26,6 +26,10 @@ launching
 Migrations are not applied by default
 
 
+6. Static files-Templates
+Add STATICFILES_DIRS and TEMPLATES-->DIRS in your settings file
+heroku runs collectstatic everytime so nothing to add
+
 
 # Tips
 heroku run python manage.py shell
