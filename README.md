@@ -24,11 +24,35 @@ launching
 
 5.  heroku run python manage.py migrate
 Migrations are not applied by default
+You can add it in the release phase (see Procfile)
 
 
 6. Static files-Templates
 Add STATICFILES_DIRS and TEMPLATES-->DIRS in your settings file
 heroku runs collectstatic everytime so nothing to add
+
+
+
+
+Creating Different settings (base, dev, production)
+
+1. Create a config folder inside main project folder
+
+2. include __init__.py file
+
+3. create a base.py file and change all paths
+basically, is one step up p.x. for Database
+os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3')
+
+4. heroku
+a. commit & push changes
+b. (dashboard) add config vars DJANGO_SETTINGS_MODULE=mysite.config.production
+django_heroku.settings(locals())
+This will automatically configure DATABASE_URL, ALLOWED_HOSTS, WhiteNoise (for static assets), Logging, and Heroku CI for your application.
+
+5. locally
+a.  export DJANGO_SETTINGS_MODULE=mysite.config.dev
+(in wsgi the function setdefault, sets the value only if is empty)
 
 
 # Tips
