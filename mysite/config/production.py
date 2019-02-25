@@ -1,4 +1,10 @@
 from .base import *
 
 
-print('production is on')
+SECRET_KEY = os.environ.get('SECRET_KEY', True)
+
+
+DEBUG = True
+
+
+django_heroku.settings(locals())
