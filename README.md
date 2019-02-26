@@ -3,6 +3,9 @@ This file is used to explicitly declare your application’s process types and e
 (requires gunicorn)
 You can also specify the tasks to run during release phase p.x.
 python manage.py migrate
+include release: bash ./release-tasks.sh
+The release-tasks file will have all the release tasks
+(dont forget to chmod 0777 release-tasks.sh)
 
 2. Create a runtime.txt
 This will inform heroku for python version
