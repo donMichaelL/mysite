@@ -60,5 +60,7 @@ a.  export DJANGO_SETTINGS_MODULE=mysite.config.dev
 (in wsgi the function setdefault, sets the value only if is empty)
 
 
+# Continuous integration 
+
 # Tips
 heroku run python manage.py shell
